@@ -24,5 +24,6 @@
         "src=${localEnv:HOME}/.secrets/,dst=/home/vscode/.secrets/,type=bind,ro"
     ],
     "remoteUser": "vscode",
-    "containerUser": "vscode"
+    "containerUser": "vscode",
+    "postCreateCommand": "nix build git+ssh://git@github.com/marcos-quezada-perez_statista/nix-dev-container.git#homeConfigurations.vscode.activationPackage && ./result/activate"
 }

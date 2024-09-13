@@ -9,4 +9,4 @@ set -e;
 CONFIG_DIR=${XDG_CONFIG_HOME:=$HOME/.config}
 /nix/var/nix/profiles/default/bin/nix \
   --extra-experimental-features "nix-command flakes" \
-  run $CONFIG_DIR/home-manager#homeConfigurations.\"$USER\".activationPackage
+  run $CONFIG_DIRr#homeConfigurations.\"$USER\".activationPackage
