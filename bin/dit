@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# ------------------------------------------------
+# dit - short hand for git for dotfiles
+# ------------------------------------------------
+# As we control dotfiles as git's bare repo, 
+# it is cumbersome to type out whole work-tree
+# git command to interact with our dotfiles folder
+#
+# dit command gives us easy access to control out dotilfes
+# without deviating too much from our `git` command flow
+
+
+CONFIG_DIR=${XDG_CONFIG_HOME:=$HOME/.config}
+git --git-dir=$HOME/.dotfiles.git --work-tree=$CONFIG_DIR "$@"
