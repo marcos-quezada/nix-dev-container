@@ -7,21 +7,21 @@ on:
 
 jobs:
   deploy:
-  if: ${{ github.ref == 'refs/head/main' }}
-  runs-on: ubuntu-latest
-  permissions:
-    packages: write
-    contents: write
-    pull-request: write
-  steps:
-    - uses: actions/checkout@v3
+    if: ${{ github.ref == 'refs/head/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: write
+      pull-request: write
+    steps:
+      - uses: actions/checkout@v3
 
-    - name: "Publish nix dev container"
-      uses: devcontainers/actions@v1
-      with:
-        publish-templates: "true"
-        base-path-to-templates: "."
-        generate-docs: "false"
-      
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Publish nix dev container"
+        uses: devcontainers/actions@v1
+        with:
+          publish-templates: "true"
+          base-path-to-templates: "."
+          generate-docs: "false"
+        
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
